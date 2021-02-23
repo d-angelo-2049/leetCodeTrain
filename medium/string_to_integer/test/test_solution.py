@@ -44,6 +44,25 @@ class MyTestCase(unittest.TestCase):
         solution = Solution()
         expected = 0
         actual = solution.myAtoi("+-12")
+        self.assertEqual(expected, actual)
+
+
+    def test_white_space(self):
+        solution = Solution()
+        expected = 0
+        actual = solution.myAtoi("")
+
+        self.assertEqual(expected, actual)
+
+    def test_plus_only(self):
+        solution = Solution()
+        expected = 0
+        actual = solution.myAtoi("+")
+
+    def test_composite_numeric(self):
+        solution = Solution()
+        expected = 0
+        actual = solution.myAtoi("00000-42a1234")
 
         self.assertEqual(expected, actual)
 if __name__ == '__main__':

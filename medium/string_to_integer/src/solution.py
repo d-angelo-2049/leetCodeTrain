@@ -7,11 +7,18 @@ class Solution:
         white_space_ignored = s.replace(' ', '')
         composite_nums = ''
 
+        if not white_space_ignored:
+            return 0
+
         if white_space_ignored[0] == '-':
+            if not white_space_ignored[1::]:
+                return 0
             if not white_space_ignored[1].isdigit():
                 return 0
             composite_nums = white_space_ignored[0::]
         elif white_space_ignored[0] == '+':
+            if not white_space_ignored[1::]:
+                return 0
             if not white_space_ignored[1].isdigit():
                 return 0
             composite_nums = white_space_ignored[1::]
@@ -28,3 +35,4 @@ class Solution:
             return int(only_nums)
         else:
             return 2 ** 31 - 1
+
